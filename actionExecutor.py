@@ -18,6 +18,7 @@ args = vars(parser.parse_args())
 
 
 api_headers = {'Content-Type': 'application/json'}
+url = '<url to post to>'
 
 def main():
    global LOG_PREFIX
@@ -31,7 +32,7 @@ def main():
    bodytopost = json.dumps(queue_message)
    for x in queue_message:
        logging.debug(x)
-   req = requests.post('https://enxeb9r506y5.x.pipedream.net', data = bodytopost, headers = api_headers)
+   req = requests.post(url, data = bodytopost, headers = api_headers)
 
 if __name__ == '__main__':
     main()
